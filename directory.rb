@@ -1,6 +1,7 @@
 @students = []
   
 def input_students
+  puts "Input the students"
   puts "Please enter the names of the students"
   puts "To finish, just hit return twice"
   # get the first name
@@ -35,9 +36,10 @@ def print_menu
 end
 
 def show_students
-    print_header
-    print_students_list
-    print_footer
+  puts "Show the students"
+  print_header
+  print_students_list
+  print_footer
 end
 
 def process(selection)
@@ -73,6 +75,7 @@ def print_footer
 end
 
 def save_students
+  puts "Saved the list to students.csv"
   # open the file for writing
   file = File.open("students.csv", "w")
   # iterate over the array of students
@@ -85,6 +88,7 @@ def save_students
 end
   
 def load_students(filename = "students.csv")
+  puts "Loaded the list from students.csv"
   file = File.open(filename, "r")
   file.readlines.each do |line|
   name, cohort = line.chomp.split(',')
